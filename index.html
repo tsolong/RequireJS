@@ -5,6 +5,42 @@
     <title>RequireJS学习</title>
 </head>
 <body>
-RequireJS
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+
+    //Javascript模块化编程（一）：模块的写法
+    var module = (function () {
+        var count = 0;
+        var get = function () {
+            return count;
+        }
+        var set = function (num) {
+            count = num;
+            return count;
+        }
+        return {
+            get: get,
+            set: set
+        }
+    })();
+
+    var module = (function (mod, $) {
+        mod.m3 = function () {
+            console.log($('body').length);
+            return mod.set(20);
+        }
+        return mod;
+    })(module || {}, jQuery);
+
+    console.log(module.get());
+    console.log(module.set(10));
+    console.log(module.m3());
+
+    //Javascript模块化编程（二）：AMD规范
+
+
+</script>
+
 </body>
 </html>
