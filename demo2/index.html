@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RequireJS 页面加载顺序</title>
+</head>
+<body>
+
+<script src="js/require.js"></script>
+<script src="js/app.js"></script>
+<script>
+
+    require(['jquery'], function ($) {
+        $(function () {
+            alert('dom加载完成')
+        });
+        alert('jQuery加载完成');
+    });
+
+    alert('123');
+
+    document.addEventListener("DOMContentLoaded", function () {
+        alert('456');
+    }, false);
+
+</script>
+
+</body>
+</html>

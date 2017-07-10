@@ -1,7 +1,3 @@
-require(['js/common/main'], function () {
-
-    require(['common/print'], function (print) {
-        print.printMsg('my username is tsolong');
-    });
-
+require(['js/common/main', 'js/common/print'], function (main, print) {
+    print.printMsg('my username is tsolong');
 });
