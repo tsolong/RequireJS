@@ -2,43 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Javascript模块化编程（一）：模块的写法</title>
+    <title>RequireJS 练习</title>
 </head>
 <body>
 
-<script src="js/lib/jquery-1.10.2.min.js"></script>
-<script>
-
-    //Javascript模块化编程（一）：模块的写法
-    var module = (function () {
-        var count = 0;
-        var get = function () {
-            return count;
-        }
-        var set = function (num) {
-            count = num;
-            return count;
-        }
-        return {
-            get: get,
-            set: set
-        }
-    })();
-
-    var module = (function (mod, $) {
-        mod.m3 = function () {
-            console.log($('body').length);
-            return mod.set(20);
-        }
-        return mod;
-    })(module || {}, jQuery);
-
-    console.log(module.get());
-    console.log(module.set(10));
-    console.log(module.m3());
-
-
-</script>
+    <script src="js/require.js"></script>
 
 </body>
 </html>
